@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Servicio de Jardinería y más | Gilberth Cubillo Monge - Puriscal
+    </title>
+    <meta
+      name="description"
+      content="Servicio de jardinería, chápeas a máquina y a cuchillo, limpieza de jardines, fumigación, poda de setos y abonado en Santiago de Puriscal, San José, Costa Rica."
+    />
+    <meta
+      property="og:title"
+      content="Servicio de Jardinería y más | Gilberth Cubillo Monge"
+    />
+    <meta
+      property="og:description"
+      content="Nos encargamos de chapear y embellecer su propiedad en Santiago de Puriscal. Contáctenos al 8862-8668."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://josbrevar07.github.io/servicio_de_jardineria/"
+    />
+
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --green-dark: #143d24;
+        --green-primary: #1f6e3d;
+        --green-bright: #2ea44f;
+        --green-soft: #eaf7ee;
+        --earth-accent: #d97706;
+        --bg-page: #f6f9f7;
+        --bg-card: #ffffff;
+        --text-main: #18261d;
+        --text-muted: #526358;
+        --border-light: #dce7e0;
+        --shadow-sm: 0 4px 14px rgba(20, 61, 36, 0.06);
+        --shadow-md: 0 12px 30px rgba(20, 61, 36, 0.12);
+        --radius-md: 14px;
+        --radius-lg: 22px;
+        --transition: 0.25s ease;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .brand-title {
+        font-family: "Outfit", sans-serif;
+        line-height: 1.2;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1180px, 92%);
+        margin-inline: auto;
+      }
+
+      /* ================= HEADER & NAV ================= */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .nav-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.85rem 0;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .brand-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: linear-gradient(
+          135deg,
+          var(--green-primary),
+          var(--green-dark)
+        );
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      .brand-title {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--green-dark);
+      }
+
+      .brand-sub {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--text-main);
+        transition: color var(--transition);
+      }
+
+      .nav-links a:hover {
+        color: var(--green-primary);
+      }
+
+      /* Dropdown Otros Servicios */
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-btn {
+        background: var(--green-soft);
+        color: var(--green-dark);
+        border: 1px solid var(--border-light);
+        padding: 0.48rem 0.9rem;
+        border-radius: 999px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 0.88rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        transition: var(--transition);
+      }
+
+      .dropdown-btn:hover {
+        background: var(--green-primary);
+        color: #fff;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 0.6rem);
+        background: #fff;
+        min-width: 270px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--border-light);
+        padding: 0.5rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .dropdown.open .dropdown-menu {
+        display: flex;
+      }
+
+      .dropdown-menu a {
+        padding: 0.65rem 0.85rem;
+        border-radius: 9px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: var(--text-main);
+      }
+
+      .dropdown-menu a:hover {
+        background: var(--green-soft);
+        color: var(--green-dark);
+      }
+
+      .nav-cta {
+        background: var(--green-bright);
+        color: #fff !important;
+        padding: 0.55rem 1.1rem;
+        border-radius: 999px;
+        font-weight: 700 !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        box-shadow: 0 4px 12px rgba(46, 164, 79, 0.28);
+      }
+
+      .nav-cta:hover {
+        background: var(--green-primary);
+        transform: translateY(-1px);
+      }
+
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: 1px solid var(--border-light);
+        border-radius: 10px;
+        padding: 0.5rem 0.75rem;
+        font-size: 1.2rem;
+        color: var(--green-dark);
+        cursor: pointer;
+      }
+
+      /* ================= HERO ================= */
+      .hero {
+        position: relative;
+        background:
+          linear-gradient(
+            115deg,
+            rgba(14, 46, 26, 0.92) 0%,
+            rgba(25, 84, 48, 0.84) 55%,
+            rgba(20, 61, 36, 0.75) 100%
+          ),
+          url("assets/img/hero-bg.jpg") center/cover no-repeat;
+        color: #fff;
+        padding: clamp(3.5rem, 8vw, 6.2rem) 0;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        padding: 0.4rem 0.95rem;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        margin-bottom: 1.1rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+        color: #e4f2e9;
+        max-width: 58ch;
+        margin-bottom: 1.8rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        padding: 0.85rem 1.5rem;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        border: none;
+        transition: var(--transition);
+      }
+
+      .btn-primary {
+        background: #25d366;
+        color: #0b2916;
+        box-shadow: 0 8px 22px rgba(37, 211, 102, 0.32);
+      }
+
+      .btn-primary:hover {
+        background: #20bd5a;
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+
+      .hero-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem;
+      }
+
+      .hero-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .hero-list {
+        list-style: none;
+        display: grid;
+        gap: 0.75rem;
+        font-size: 0.96rem;
+      }
+
+      .hero-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+      }
+
+      .hero-list i {
+        color: #6ee7b7;
+      }
+
+      /* ================= SECTIONS ================= */
+      section {
+        padding: clamp(3.5rem, 6vw, 5rem) 0;
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 2.8rem;
+      }
+
+      .section-tag {
+        display: inline-block;
+        color: var(--green-primary);
+        background: var(--green-soft);
+        font-weight: 700;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 0.35rem 0.85rem;
+        border-radius: 999px;
+        margin-bottom: 0.65rem;
+      }
+
+      .section-header h2 {
+        font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+        color: var(--green-dark);
+        margin-bottom: 0.65rem;
+      }
+
+      .section-header p {
+        color: var(--text-muted);
+        font-size: 1.02rem;
+      }
+
+      /* ================= SERVICES GRID ================= */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 1.4rem;
+      }
+
+      .service-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition:
+          transform var(--transition),
+          box-shadow var(--transition),
+          border-color var(--transition);
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--green-bright);
+      }
+
+      .service-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        background: var(--green-soft);
+        color: var(--green-primary);
+        display: grid;
+        place-items: center;
+        font-size: 1.45rem;
+        margin-bottom: 1.15rem;
+      }
+
+      .service-card h3 {
+        font-size: 1.25rem;
+        color: var(--green-dark);
+        margin-bottom: 0.55rem;
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+        font-size: 0.96rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .service-action {
+        background: none;
+        border: none;
+        color: var(--green-primary);
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 0.92rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        cursor: pointer;
+        padding: 0;
+        align-self: flex-start;
+      }
+
+      .service-action:hover {
+        color: var(--green-dark);
+        text-decoration: underline;
+      }
+
+      /* ================= INTERACTIVE QUOTE BUILDER ================= */
+      .quote-section {
+        background: linear-gradient(180deg, #eaf7ee 0%, #f6f9f7 100%);
+        border-top: 1px solid var(--border-light);
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .quote-box {
+        background: #fff;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-md);
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .quote-step-title {
+        font-weight: 700;
+        color: var(--green-dark);
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .step-num {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--green-primary);
+        color: #fff;
+        font-size: 0.8rem;
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .chip-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.65rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-chip {
+        border: 1.5px solid var(--border-light);
+        border-radius: 12px;
+        padding: 0.7rem 0.9rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 600;
+        font-size: 0.92rem;
+        transition: var(--transition);
+        user-select: none;
+      }
+
+      .service-chip input {
+        accent-color: var(--green-primary);
+        width: 17px;
+        height: 17px;
+      }
+
+      .service-chip:has(input:checked) {
+        background: var(--green-soft);
+        border-color: var(--green-primary);
+        color: var(--green-dark);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.88rem;
+        font-weight: 700;
+        margin-bottom: 0.35rem;
+        color: var(--green-dark);
+      }
+
+      .form-group select,
+      .form-group input {
+        width: 100%;
+        padding: 0.72rem 0.9rem;
+        border-radius: 10px;
+        border: 1.5px solid var(--border-light);
+        font-family: inherit;
+        font-size: 0.95rem;
+        background: #fff;
+      }
+
+      .form-group select:focus,
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--green-primary);
+      }
+
+      .quote-summary {
+        background: var(--green-dark);
+        color: #fff;
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .quote-summary h3 {
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        padding-bottom: 0.7rem;
+      }
+
+      .summary-preview {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 0.9rem;
+        border-radius: 10px;
+        font-size: 0.88rem;
+        color: #e4f2e9;
+        min-height: 110px;
+        white-space: pre-line;
+      }
+
+      /* ================= GALLERY ================= */
+      .gallery-filters {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+      }
+
+      .filter-btn {
+        background: #fff;
+        border: 1px solid var(--border-light);
+        color: var(--text-main);
+        padding: 0.5rem 1.1rem;
+        border-radius: 999px;
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: var(--green-primary);
+        color: #fff;
+        border-color: var(--green-primary);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.2rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: #dfeae3;
+        aspect-ratio: 4 / 3;
+        cursor: pointer;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.06);
+      }
+
+      .gallery-caption {
+        position: absolute;
+        inset: auto 0 0 0;
+        background: linear-gradient(transparent, rgba(14, 46, 26, 0.9));
+        color: #fff;
+        padding: 1.5rem 1rem 0.85rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* Lightbox */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 25, 16, 0.92);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+
+      .lightbox.open {
+        display: flex;
+      }
+
+      .lightbox-content {
+        max-width: 900px;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+      }
+
+      .lightbox-content img {
+        max-height: 75vh;
+        margin: 0 auto 0.9rem;
+        border-radius: 12px;
+        object-fit: contain;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        border: none;
+        color: #fff;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+
+      /* ================= CONTACT ================= */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.4rem;
+      }
+
+      .contact-card {
+        background: #fff;
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .contact-icon {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 1rem;
+        border-radius: 50%;
+        background: var(--green-soft);
+        color: var(--green-primary);
+        display: grid;
+        place-items: center;
+        font-size: 1.4rem;
+      }
+
+      .contact-card h3 {
+        color: var(--green-dark);
+        margin-bottom: 0.4rem;
+        font-size: 1.15rem;
+      }
+
+      .contact-card p,
+      .contact-card a {
+        color: var(--text-muted);
+        font-weight: 600;
+        word-break: break-word;
+      }
+
+      .contact-card a:hover {
+        color: var(--green-primary);
+      }
+
+      /* ================= FOOTER ================= */
+      footer {
+        background: #0f2919;
+        color: #d6e6dc;
+        padding: 3.5rem 0 1.5rem;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr;
+        gap: 2rem;
+        padding-bottom: 2.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .footer h3 {
+        color: #fff;
+        margin-bottom: 0.85rem;
+        font-size: 1.15rem;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: grid;
+        gap: 0.5rem;
+        font-size: 0.92rem;
+      }
+
+      .footer-links a:hover {
+        color: #6ee7b7;
+      }
+
+      /* Signature Josbrevar07 Bar */
+      .dev-footer {
+        padding-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.88rem;
+      }
+
+      .dev-socials {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+
+      .dev-socials a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        transition: var(--transition);
+      }
+
+      .dev-socials a:hover {
+        background: var(--green-bright);
+        transform: translateY(-2px);
+      }
+
+      /* Floating WhatsApp Button */
+      .float-wa {
+        position: fixed;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        z-index: 999;
+        background: #25d366;
+        color: #0b2916;
+        font-weight: 800;
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      .float-wa:hover {
+        transform: scale(1.04);
+      }
+
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 920px) {
+        .hero-grid,
+        .quote-box,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: #fff;
+          flex-direction: column;
+          align-items: stretch;
+          padding: 1rem 1.5rem 1.5rem;
+          border-bottom: 1px solid var(--border-light);
+          box-shadow: var(--shadow-md);
+          display: none;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .dropdown-menu {
+          position: static;
+          box-shadow: none;
+          margin-top: 0.4rem;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header>
+      <div class="container nav-wrapper">
+        <a href="#inicio" class="brand">
+          <div class="brand-icon"><i class="fa-solid fa-seedling"></i></div>
+          <div>
+            <div class="brand-title">Jardinería y más</div>
+            <div class="brand-sub">
+              Gilberth Cubillo Monge · ¡Para servirle!
+            </div>
+          </div>
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#cotizar">Cotizar</a></li>
+          <li><a href="#trabajos">Trabajos realizados</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li class="dropdown" id="servicesDropdown">
+            <button type="button" class="dropdown-btn" id="dropdownBtn">
+              Otros servicios <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a
+                href="https://clases-de-manejo-personalizadas.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-solid fa-car"></i> Clases de manejo personalizadas,
+                Josué
+              </a>
+              <a
+                href="https://josbrevar07.github.io/servicio_de_impresiones/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-solid fa-print"></i> Servicio de impresiones,
+                escaneo y más
+              </a>
+              <a href="https://www.ivettenutricionista.com/">
+                <i class="fa-solid fa-apple-whole"></i> Consultorio de nutrición
+              </a>
+            </div>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/50688628668?text=Hola%20Gilberth,%20me%20interesa%20cotizar%20un%20servicio%20de%20jardiner%C3%ADa."
+              target="_blank"
+              rel="noopener"
+              class="nav-cta"
+            >
+              <i class="fa-brands fa-whatsapp"></i> 8862-8668
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-badge">
+            <i class="fa-solid fa-location-dot"></i> Santiago de Puriscal, San
+            José, Costa Rica
+          </span>
+          <h1>Servicio de jardinería y mantenimiento de propiedades</h1>
+          <p>
+            Nos encargamos de chapear, limpiar y embellecer su jardín, lote o
+            finca con puntualidad, equipo profesional y atención personalizada
+            por <strong>Gilberth Cubillo Monge</strong>.
+          </p>
+          <div class="hero-actions">
+            <a href="#cotizar" class="btn btn-primary">
+              <i class="fa-brands fa-whatsapp"></i> Cotizar por WhatsApp
+            </a>
+            <a href="#servicios" class="btn btn-outline">
+              <i class="fa-solid fa-list-check"></i> Ver servicios
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3><i class="fa-solid fa-shield-halved"></i> ¿Por qué elegirnos?</h3>
+          <ul class="hero-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Trabajo rápido con
+              motoguadañas de alto rendimiento
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Acabado fino a cuchillo
+              en zonas delicadas o inclinadas
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Recolección de basura
+              vegetal y limpieza completa
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i> Servicio local en todo
+              Puriscal y alrededores
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICIOS ================= -->
+    <section id="servicios">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Lo que hacemos</span>
+          <h2>Nuestros Servicios</h2>
+          <p>
+            Seleccione cualquiera de nuestros servicios para agregarlo
+            directamente a su solicitud de cotización.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div>
+              <div class="service-icon"><i class="fa-solid fa-broom"></i></div>
+              <h3>Limpieza de Jardines</h3>
+              <p>
+                Le recogemos la basura, hojas secas y desechos vegetales para
+                que su jardín luzca limpio y hermoso.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="service-action"
+              data-select-service="Limpieza de Jardines"
+            >
+              Agregar a cotización <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon"><i class="fa-solid fa-fan"></i></div>
+              <h3>Chápeas a Máquina</h3>
+              <p>
+                Usamos nuestras motoguadañas para realizar un corte rápido,
+                parejo y efectivo en patios, lotes y zonas verdes.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="service-action"
+              data-select-service="Chápeas a Máquina"
+            >
+              Agregar a cotización <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon"><i class="fa-solid fa-leaf"></i></div>
+              <h3>Chápeas a Cuchillo</h3>
+              <p>
+                En lugares de difícil acceso, laderas o alrededor de plantas
+                delicadas usamos cuchillo para cortar el zacate con precisión.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="service-action"
+              data-select-service="Chápeas a Cuchillo"
+            >
+              Agregar a cotización <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon">
+                <i class="fa-solid fa-spray-can-sparkles"></i>
+              </div>
+              <h3>Fumigaciones en General</h3>
+              <p>
+                Le hierbizamos y controlamos maleza en su propiedad de manera
+                responsable en caso de que usted lo requiera.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="service-action"
+              data-select-service="Fumigaciones en General"
+            >
+              Agregar a cotización <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon">
+                <i class="fa-solid fa-scissors"></i>
+              </div>
+              <h3>Arreglos de Setos y Arbustos</h3>
+              <p>
+                Damos forma a sus setos y arbustos y le quitamos la maleza
+                alrededor de sus árboles y plantas ornamentales.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="service-action"
+              data-select-service="Arreglos de Setos y Arbustos"
+            >
+              Agregar a cotización <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="service-card">
+            <div>
+              <div class="service-icon">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h3>Abonado de Plantas y Árboles</h3>
+              <p>
+                Le abonamos sus árboles y plantas para fortalecer su
+                crecimiento, floración y color verde durante todo el año.
+              </p>
+            </div>
+            <button
+              type="button"
+              class="service-action"
+              data-select-service="Abonado de Plantas y Árboles"
+            >
+              Agregar a cotización <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COTIZADOR DINÁMICO ================= -->
+    <section class="quote-section" id="cotizar">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Rápido y sin compromiso</span>
+          <h2>Arme su Solicitud en Segundos</h2>
+          <p>
+            Marque los trabajos que necesita y envíe el detalle listo por
+            WhatsApp a Gilberth.
+          </p>
+        </div>
+
+        <div class="quote-box">
+          <div>
+            <div class="quote-step-title">
+              <span class="step-num">1</span> Elija los servicios que necesita:
+            </div>
+            <div class="chip-grid" id="serviceCheckboxes">
+              <label class="service-chip"
+                ><input type="checkbox" value="Limpieza de Jardines" checked />
+                Limpieza de Jardines</label
+              >
+              <label class="service-chip"
+                ><input type="checkbox" value="Chápeas a Máquina" checked />
+                Chápeas a Máquina</label
+              >
+              <label class="service-chip"
+                ><input type="checkbox" value="Chápeas a Cuchillo" /> Chápeas a
+                Cuchillo</label
+              >
+              <label class="service-chip"
+                ><input type="checkbox" value="Fumigaciones en General" />
+                Fumigaciones en General</label
+              >
+              <label class="service-chip"
+                ><input type="checkbox" value="Arreglos de Setos y Arbustos" />
+                Arreglos de Setos y Arbustos</label
+              >
+              <label class="service-chip"
+                ><input type="checkbox" value="Abonado de Plantas y Árboles" />
+                Abonado de Plantas</label
+              >
+            </div>
+
+            <div class="quote-step-title">
+              <span class="step-num">2</span> Detalles de su propiedad:
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="zonaSelect">Zona / Distrito en Puriscal</label>
+                <select id="zonaSelect">
+                  <option value="Santiago de Puriscal">
+                    Santiago de Puriscal
+                  </option>
+                  <option value="Barbacoas">Barbacoas</option>
+                  <option value="Mercedes Sur">Mercedes Sur</option>
+                  <option value="Grifo Alto">Grifo Alto</option>
+                  <option value="San Rafael">San Rafael</option>
+                  <option value="Candelarita">Candelarita</option>
+                  <option value="Desamparaditos">Desamparaditos</option>
+                  <option value="San Antonio">San Antonio</option>
+                  <option value="Otra zona cercana">Otra zona cercana</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tamanoSelect">Tamaño aproximado</label>
+                <select id="tamanoSelect">
+                  <option value="Jardín residencial pequeño">
+                    Jardín residencial pequeño
+                  </option>
+                  <option value="Patio o lote mediano" selected>
+                    Patio o lote mediano
+                  </option>
+                  <option value="Propiedad grande / Quinta">
+                    Propiedad grande / Quinta
+                  </option>
+                  <option value="Finca o terreno amplio">
+                    Finca o terreno amplio
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="clienteNombre">Su nombre (opcional)</label>
+              <input
+                type="text"
+                id="clienteNombre"
+                placeholder="Ej. Carlos Mora"
+              />
+            </div>
+          </div>
+
+          <div class="quote-summary">
+            <h3>
+              <i class="fa-brands fa-whatsapp"></i> Vista previa del mensaje
+            </h3>
+            <div class="summary-preview" id="messagePreview"></div>
+            <a
+              id="sendWhatsappBtn"
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+              style="width: 100%"
+            >
+              Enviar consulta al 8862-8668
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TRABAJOS REALIZADOS ================= -->
+    <section id="trabajos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Galería</span>
+          <h2>Trabajos Realizados</h2>
+          <p>Toque cualquier fotografía para verla en pantalla completa.</p>
+        </div>
+
+        <div class="gallery-filters" id="galleryFilters">
+          <button type="button" class="filter-btn active" data-filter="all">
+            Todos
+          </button>
+          <button type="button" class="filter-btn" data-filter="chapea">
+            Chápeas
+          </button>
+          <button type="button" class="filter-btn" data-filter="jardines">
+            Jardines y Setos
+          </button>
+          <button type="button" class="filter-btn" data-filter="limpieza">
+            Limpieza y Fincas
+          </button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+      <button
+        type="button"
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Cerrar"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="Trabajo de jardinería" />
+        <p id="lightboxCaption"></p>
+      </div>
+    </div>
+
+    <!-- ================= CONTACTO ================= -->
+    <section id="contacto" style="background: #eef5f0">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Contáctenos</span>
+          <h2>Estamos para Servirle</h2>
+          <p>
+            Llámenos, escríbanos por WhatsApp o envíenos un correo electrónico
+            para coordinar una visita.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h3>Ubicación</h3>
+            <p>Santiago de Puriscal, San José, Costa Rica</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3>Teléfono y WhatsApp</h3>
+            <p>
+              <a href="https://wa.me/50688628668" target="_blank" rel="noopener"
+                >8862-8668</a
+              >
+              <br />
+              <a href="tel:+50688628668" style="font-size: 0.85rem"
+                >Tocar para llamar directo</a
+              >
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <h3>Correo Electrónico</h3>
+            <p>
+              <a href="mailto:gilberthcubillom@hotmail.com"
+                >gilberthcubillom@hotmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3>Servicio de Jardinería y más</h3>
+            <p style="font-size: 0.93rem; max-width: 38ch">
+              Atendido personalmente por
+              <strong>Gilberth Cubillo Monge</strong>. Mantenimiento integral de
+              jardines, lotes y propiedades en Santiago de Puriscal, San José,
+              Costa Rica.
+            </p>
+          </div>
+
+          <div>
+            <h3>Navegación</h3>
+            <ul class="footer-links">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#servicios">Servicios de jardinería</a></li>
+              <li><a href="#cotizar">Cotizar por WhatsApp</a></li>
+              <li><a href="#trabajos">Trabajos realizados</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Servicios Principales</h3>
+            <ul class="footer-links">
+              <li><a href="#servicios">Limpieza de jardines</a></li>
+              <li><a href="#servicios">Chápeas a máquina y cuchillo</a></li>
+              <li><a href="#servicios">Fumigaciones en general</a></li>
+              <li><a href="#servicios">Arreglo de setos y abonado</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Josbrevar07 Developer Footer -->
+        <div class="dev-footer">
+          <div>
+            © <span id="yearNow"></span> Servicio de Jardinería y más · Designed
+            by <strong>Josbrevar07</strong> · Página web elaborada y diseñada en
+            Santiago de Puriscal, San José, Costa Rica
+          </div>
+          <div class="dev-socials" aria-label="Redes de Josbrevar07">
+            <a
+              href="https://wa.me/50686917316"
+              target="_blank"
+              rel="noopener"
+              title="WhatsApp Josbrevar07"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://clases-de-manejo-personalizadas.com/"
+              target="_blank"
+              rel="noopener"
+              title="Sitio Web"
+              ><i class="fa-solid fa-globe"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/josbrevar07"
+              target="_blank"
+              rel="noopener"
+              title="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/josue.brenesvargas"
+              target="_blank"
+              rel="noopener"
+              title="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/@josbrevar0773"
+              target="_blank"
+              rel="noopener"
+              title="YouTube"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/50688628668?text=Hola%20Gilberth,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20jardiner%C3%ADa."
+      target="_blank"
+      rel="noopener"
+      class="float-wa"
+    >
+      <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem"></i> WhatsApp
+    </a>
+
+    <script>
+      // 1. Año dinámico
+      document.getElementById("yearNow").textContent = new Date().getFullYear();
+
+      // 2. Menú móvil y dropdown "Otros servicios"
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navLinks = document.getElementById("navLinks");
+      const dropdown = document.getElementById("servicesDropdown");
+      const dropdownBtn = document.getElementById("dropdownBtn");
+
+      mobileToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      dropdownBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle("open");
+      });
+
+      document.addEventListener("click", () => {
+        dropdown.classList.remove("open");
+      });
+
+      // 3. Cotizador dinámico por WhatsApp
+      const checkboxes = document.querySelectorAll(
+        '#serviceCheckboxes input[type="checkbox"]',
+      );
+      const zonaSelect = document.getElementById("zonaSelect");
+      const tamanoSelect = document.getElementById("tamanoSelect");
+      const clienteNombre = document.getElementById("clienteNombre");
+      const messagePreview = document.getElementById("messagePreview");
+      const sendWhatsappBtn = document.getElementById("sendWhatsappBtn");
+
+      function updateQuoteMessage() {
+        const selected = Array.from(checkboxes)
+          .filter((cb) => cb.checked)
+          .map((cb) => `• ${cb.value}`);
+
+        const saludo = clienteNombre.value.trim()
+          ? `Hola Gilberth, mi nombre es ${clienteNombre.value.trim()}.`
+          : "Hola Gilberth, ¡mucho gusto!";
+
+        const listaServicios =
+          selected.length > 0
+            ? selected.join("\n")
+            : "• Información general de jardinería";
+
+        const msg = `${saludo} Quisiera cotizar los siguientes servicios:\n\n${listaServicios}\n\n📍 Zona: ${zonaSelect.value}\n📐 Tamaño: ${tamanoSelect.value}`;
+
+        messagePreview.textContent = msg;
+        sendWhatsappBtn.href = `https://wa.me/50688628668?text=${encodeURIComponent(msg)}`;
+      }
+
+      checkboxes.forEach((cb) =>
+        cb.addEventListener("change", updateQuoteMessage),
+      );
+      zonaSelect.addEventListener("change", updateQuoteMessage);
+      tamanoSelect.addEventListener("change", updateQuoteMessage);
+      clienteNombre.addEventListener("input", updateQuoteMessage);
+      updateQuoteMessage();
+
+      // Botones "Agregar a cotización" en las tarjetas de servicio
+      document.querySelectorAll("[data-select-service]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetService = btn.getAttribute("data-select-service");
+          checkboxes.forEach((cb) => {
+            if (cb.value === targetService) cb.checked = true;
+          });
+          updateQuoteMessage();
+          document
+            .getElementById("cotizar")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      // 4. Galería filtrable + Lightbox (ajuste las rutas src a sus imágenes reales)
+      const GALLERY_ITEMS = [
+        {
+          src: "3.jpg",
+          title: "Chápea a máquina en zona verde",
+          category: "chapea",
+        },
+        {
+          src: "2.jpg",
+          title: "Limpieza integral de jardín residencial",
+          category: "limpieza",
+        },
+        {
+          src: "4.jpg",
+          title: "Poda y arreglo de setos ornamentales",
+          category: "jardines",
+        },
+        {
+          src: "5.jpg",
+          title: "Mantenimiento de lote en Puriscal",
+          category: "chapea",
+        },
+        {
+          src: "1.jpg",
+          title: "Chápea a cuchillo en área inclinada",
+          category: "chapea",
+        },
+        {
+          src: "8.jpg",
+          title: "Deshierba y abonado de árboles",
+          category: "jardines",
+        },
+        {
+          src: "7.jpg",
+          title: "Recolección de desechos y acabado limpio",
+          category: "limpieza",
+        },
+        {
+          src: "6.jpg",
+          title: "Embellecimiento general de propiedad",
+          category: "jardines",
+        },
+      ];
+
+      const galleryGrid = document.getElementById("galleryGrid");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+
+      function renderGallery(filter = "all") {
+        galleryGrid.innerHTML = "";
+        const filtered =
+          filter === "all"
+            ? GALLERY_ITEMS
+            : GALLERY_ITEMS.filter((item) => item.category === filter);
+
+        filtered.forEach((item) => {
+          const card = document.createElement("div");
+          card.className = "gallery-item";
+          card.innerHTML = `
+          <img src="${item.src}" alt="${item.title}" loading="lazy"
+               onerror="this.src='https://placehold.co/600x450/1f6e3d/ffffff?text=Trabajo+de+Jardiner%C3%ADa'" />
+          <div class="gallery-caption">
+            <span>${item.title}</span>
+            <i class="fa-solid fa-expand"></i>
+          </div>
+        `;
+          card.addEventListener("click", () => {
+            lightboxImg.src = card.querySelector("img").src;
+            lightboxCaption.textContent = `${item.title} — Gilberth Cubillo Monge`;
+            lightbox.classList.add("open");
+          });
+          galleryGrid.appendChild(card);
+        });
+      }
+
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          renderGallery(btn.getAttribute("data-filter"));
+        });
+      });
+
+      document.getElementById("lightboxClose").addEventListener("click", () => {
+        lightbox.classList.remove("open");
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) lightbox.classList.remove("open");
+      });
+
+      renderGallery();
+    </script>
+  </body>
+</html>
